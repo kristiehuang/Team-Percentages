@@ -1,5 +1,7 @@
 https://diversitydata.io/?ref=public-apis#overview
-Given list of names "Ana Alligator, Barry Bulldog" -- get percentage of male/female team
+Given list of names "Ana Alligator, Barry Bulldog" -- get percentage of women & POC in list
+
+UI fixes todolist: progress bar results + hover-over "xx% sure" for confidence measures
 
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
