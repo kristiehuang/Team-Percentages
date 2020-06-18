@@ -103,15 +103,14 @@ class App extends Component {
       <div className="App">
 
         <h1>How many <u>women</u> and <u>people of color</u> are on your teams?</h1>
-        <p class="Subtitle">Comma-separated list, please.  API by diversitydata.io.</p>
+        <p class="Subtitle">API by diversitydata.io.</p>
 
         <form onSubmit={this.handleSubmit}>
           <Input
             name="names"
             value={this.state.input}
             onChange={this.handleChange}
-            label="Employees' names"
-            placeholder="(E.g. Abby Alligator, Ben Bulldog)"
+            placeholder="Comma-separated list, e.g. Abby Alligator, Ben Bulldog"
             multiline={true}
             rows={1}
             rowsMax={8}
