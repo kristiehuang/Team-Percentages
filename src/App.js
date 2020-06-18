@@ -32,15 +32,19 @@ class App extends Component {
 
   handleSubmit = event => {
     event.preventDefault();
+
     alert('Checking this list of names: ' + this.state.input);
     const names = this.state.input.split(", ");
-    console.log(names);
-
-    this.calculatePercentage(names);
 
     this.setState({
-      names: names
+      names: names,
+      womenTotal: 0,
+      womenTotalConfidence: 0,
+      pocTotal: 0,
+      pocTotalConfidence: 0,
     });
+    this.calculatePercentage(names);
+
 
   }
 
