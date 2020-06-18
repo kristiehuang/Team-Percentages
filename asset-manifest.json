@@ -1,22 +1,22 @@
 {
   "files": {
-    "main.css": "/team-percentages/static/css/main.9e1a471c.chunk.css",
-    "main.js": "/team-percentages/static/js/main.f6ed6312.chunk.js",
-    "main.js.map": "/team-percentages/static/js/main.f6ed6312.chunk.js.map",
-    "runtime-main.js": "/team-percentages/static/js/runtime-main.58af991a.js",
-    "runtime-main.js.map": "/team-percentages/static/js/runtime-main.58af991a.js.map",
-    "static/js/2.17c07776.chunk.js": "/team-percentages/static/js/2.17c07776.chunk.js",
-    "static/js/2.17c07776.chunk.js.map": "/team-percentages/static/js/2.17c07776.chunk.js.map",
-    "index.html": "/team-percentages/index.html",
-    "precache-manifest.37df58927c2ae4917a420241bf0f72b6.js": "/team-percentages/precache-manifest.37df58927c2ae4917a420241bf0f72b6.js",
-    "service-worker.js": "/team-percentages/service-worker.js",
-    "static/css/main.9e1a471c.chunk.css.map": "/team-percentages/static/css/main.9e1a471c.chunk.css.map",
-    "static/js/2.17c07776.chunk.js.LICENSE.txt": "/team-percentages/static/js/2.17c07776.chunk.js.LICENSE.txt"
+    "main.css": "/Team-Percentages/static/css/main.9e1a471c.chunk.css",
+    "main.js": "/Team-Percentages/static/js/main.7e1494e3.chunk.js",
+    "main.js.map": "/Team-Percentages/static/js/main.7e1494e3.chunk.js.map",
+    "runtime-main.js": "/Team-Percentages/static/js/runtime-main.e7378fc6.js",
+    "runtime-main.js.map": "/Team-Percentages/static/js/runtime-main.e7378fc6.js.map",
+    "static/js/2.17c07776.chunk.js": "/Team-Percentages/static/js/2.17c07776.chunk.js",
+    "static/js/2.17c07776.chunk.js.map": "/Team-Percentages/static/js/2.17c07776.chunk.js.map",
+    "index.html": "/Team-Percentages/index.html",
+    "precache-manifest.df4f8e56567fdb219a2a2355c8e86ec6.js": "/Team-Percentages/precache-manifest.df4f8e56567fdb219a2a2355c8e86ec6.js",
+    "service-worker.js": "/Team-Percentages/service-worker.js",
+    "static/css/main.9e1a471c.chunk.css.map": "/Team-Percentages/static/css/main.9e1a471c.chunk.css.map",
+    "static/js/2.17c07776.chunk.js.LICENSE.txt": "/Team-Percentages/static/js/2.17c07776.chunk.js.LICENSE.txt"
   },
   "entrypoints": [
-    "static/js/runtime-main.58af991a.js",
+    "static/js/runtime-main.e7378fc6.js",
     "static/js/2.17c07776.chunk.js",
     "static/css/main.9e1a471c.chunk.css",
-    "static/js/main.f6ed6312.chunk.js"
+    "static/js/main.7e1494e3.chunk.js"
   ]
 }
