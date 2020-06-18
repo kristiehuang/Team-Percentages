@@ -1,5 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro:wght@700&display=swap');
+
+
+h1 {
+  color: #277caa;
+  font: 2.5em;
+  letter-spacing: .1px;
+  font-family: 'Maven Pro', sans-serif;
+}
+
+h2 {
+  color: #277caa;
+  letter-spacing: .1px;
+  font-family: 'Maven Pro', sans-serif;
+}
+
+.Subtitle {
+  color: #b1b1b1;
+  font: 1em italic;
+}
+
+p {
+  font: 1em;
+}
+
+Input {
+  background-color: #277caa;
+  margin-left: 0px;
+  width: 2em;
+}
+
 .App {
   text-align: center;
+  margin-left: 150px;
+  margin-right: 150px;
+  margin-top: 10%;
 }
 
 .App-logo {

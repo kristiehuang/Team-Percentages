@@ -6,11 +6,9 @@
  */
 
 import React, { Component, useEffect } from 'react';
-import logo from './logo.svg';
 import './App.css';
 import axios from "axios";
 import { TextField, Button, Input } from "@material-ui/core";
-import { render } from '@testing-library/react';
 
 class App extends Component {
 
@@ -27,8 +25,6 @@ class App extends Component {
     };
 
   }
-
-
 
   handleSubmit = event => {
     event.preventDefault();
@@ -60,9 +56,6 @@ class App extends Component {
 
   /** The logic. */
   calculatePercentage(names) {
-    if (!names) {
-      //error handling
-    }
 
     for (const name of names) {
       //calculate gender + likelihood
@@ -70,9 +63,8 @@ class App extends Component {
         .get(`https://api.diversitydata.io/?fullname=${name}`)
         .then((response) => {
           const { data } = response;
-          console.log("before" + this.state.womenTotal);
-          console.log(data["gender"] === "female");
 
+          console.log(data);
           this.setState({
             womenTotal: data["gender"] === "female" ? this.state.womenTotal + 1 : this.state.womenTotal,
             womenTotalConfidence: this.state.womenTotalConfidence + data["gender probability"],
@@ -80,12 +72,10 @@ class App extends Component {
             pocTotalConfidence: this.state.pocTotalConfidence + data["ethnicity probability"],
           });
 
-          console.log(this.state.womenTotal);
-
 
         })
-        .catch((error) => { this.calculatePercentage(false); });
-      
+        .catch((error) => { alert("There was an error. Try again?"); });
+
     }
 
 
@@ -94,8 +84,6 @@ class App extends Component {
 
   render() {
 
-
-    //i want to display - gender, ethnicities
     const allNameLabels = this.state.names.map((key, num) => {
       return (
         <p>{key}</p>
@@ -103,42 +91,53 @@ class App extends Component {
     });
 
     const womenPercent = this.state.womenTotal ?
-      this.state.womenTotal * 100 / this.state.names.length : 0;
-    
+      (this.state.womenTotal * 100 / this.state.names.length).toFixed(1) : 0;
+    const womenConfPercent = this.state.womenTotalConfidence ?
+      (this.state.womenTotalConfidence * 100 / this.state.names.length).toFixed(1) : 0;
     const pocPercent = this.state.pocTotal ?
-      this.state.pocTotal * 100 / this.state.names.length : 0;
+      (this.state.pocTotal * 100 / this.state.names.length).toFixed(1) : 0;
+    const pocConfPercent = this.state.pocTotalConfidence ?
+      (this.state.pocTotalConfidence * 100 / this.state.names.length).toFixed(1) : 0;
 
     return (
-        <div className="App">
-        <p>How many women and people of color are on your teams?</p>
-        <p>Comma-separated list, please.</p>
+      <div className="App">
 
-          <form onSubmit={this.handleSubmit}>
-            <Input
-              name="names"
-              value={this.state.input}
-              onChange={this.handleChange}
-              label="Employees' names"
-              helperText="(E.g. Abby Alligator, Ben Bulldog)"
-              multiline={true}
-              rows={2}
-              rowsMax={8}
-            />
-            <Button type="submit">Add</Button>
+        <h1>How many <u>women</u> and <u>people of color</u> are on your teams?</h1>
+        <p class="Subtitle">Comma-separated list, please.  API by diversitydata.io.</p>
+
+        <form onSubmit={this.handleSubmit}>
+          <Input
+            name="names"
+            value={this.state.input}
+            onChange={this.handleChange}
+            label="Employees' names"
+            placeholder="(E.g. Abby Alligator, Ben Bulldog)"
+            multiline={true}
+            rows={1}
+            rowsMax={8}
+            fullWidth={true}
+            color='primary'
+            margin='none'
+          />
+
+          <Button
+            type="submit"
+            size='large'
+            color='primary'
+          >
+            Run
+          </Button>
         </form>
-        {console.log("women total!")}
-
-        {console.log(this.state)}
-        <p>Percentage women: {womenPercent}%</p>
-
-        <p>Percentage people of color: {pocPercent}%</p>
-        <h1>List of names:</h1>
-        {allNameLabels}
+        <h2>Your Results</h2>
+        <p>Women: {womenPercent}%</p>
+        <p class="Subtitle">{womenConfPercent}% sure.</p>
+        <p>People of color: {pocPercent}%</p>
+        <p class="Subtitle">{pocConfPercent}% sure.</p>
 
 
-        </div>
-      );
-    } 
+      </div>
+    );
+  }
 }
 
 export default App;
